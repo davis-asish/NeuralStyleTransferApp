@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+
+# Virtual environments
+venv/
+venv_new/
+.venv/
+.venv_new/
+env/
+
+# AI model cache (large files, downloaded at runtime)
+AIGenProject/
+outputs/
+uploads/
+static/outputs/
+*.bin
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+models/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets
+.env
+*.env

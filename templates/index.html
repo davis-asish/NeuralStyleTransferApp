@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Image Generator & Styler</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI Image Generator & Styler</h1>
+            <p>Create stunning images from text prompts and transform existing images with AI-powered styles.</p>
+        </header>
+
+        <!-- Generate from Prompt Section -->
+        <div class="generation-section">
+            <h2>🎨 Generate from Prompt</h2>
+            <div class="form-group">
+                <label for="generate-prompt">Text Prompt:</label>
+                <input type="text" id="generate-prompt" placeholder="Describe the image you want to generate (e.g., a futuristic city at sunset)">
+                <button id="generate-btn" class="gradient-btn">Generate Image</button>
+                <div id="generate-progress" class="progress-text" style="display: none;">Generating...</div>
+                <div id="generated-preview" class="preview"></div>
+            </div>
+        </div>
+
+        <!-- Stylize an Image Section -->
+        <div class="stylize-section">
+            <h2>🎭 Stylize an Image</h2>
+            <form id="stylizeForm" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="stylize-file">Upload Image:</label>
+                    <input type="file" id="stylize-file" name="file" accept="image/*" required>
+                    <div id="stylize-preview" class="preview"></div>
+                </div>
+                <div class="form-group">
+                    <label for="style-select">Choose Style:</label>
+                    <select id="style-select" name="style">
+                        <option value="anime">Anime</option>
+                        <option value="cartoon">Cartoon</option>
+                        <option value="painting">Oil Painting</option>
+                        <option value="sketch">Sketch</option>
+                        <option value="cyberpunk">Cyberpunk</option>
+                        <option value="realistic">Realistic</option>
+                    </select>
+                </div>
+                <button type="submit" id="stylize-btn" class="gradient-btn">Apply Style</button>
+                <div id="stylize-progress" class="progress-text" style="display: none;">Stylizing...</div>
+                <div id="stylized-preview" class="preview"></div>
+            </form>
+        </div>
+
+        <!-- Gallery Section -->
+        <div class="gallery-section">
+            <h2>🖼️ Generated Images Gallery</h2>
+            <button id="refresh-gallery-btn" class="gradient-btn">Refresh Gallery</button>
+            <div id="gallery" class="gallery-grid"></div>
+        </div>
+
+        <div id="result"></div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
